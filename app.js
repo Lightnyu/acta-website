@@ -59,8 +59,8 @@ if(page==="home"){
  form?.addEventListener("submit",e=>{
   e.preventDefault();
   if(!form.reportValidity())return;
-  showModal("Join the ACTA waitlist",'<p>The registration service belongs to the existing live ACTA website. This GitHub-built copy does not collect or transmit your email.</p><p>Continue to the live site to register for launch updates and the advertised offer.</p>',[
-   {text:"Cancel",onClick:closeModal},{text:"Open live ACTA registration",primary:true,href:SOURCE+"/#register-interest"}
+  showModal("Join the LIGHTNYU waitlist",'<p>Registration is handled by the original hosted service. This GitHub Pages version does not collect or transmit your email.</p><p>Continue to the live site to register for launch updates and the advertised offer.</p>',[
+   {text:"Cancel",onClick:closeModal},{text:"Open registration",primary:true,href:SOURCE+"/#register-interest"}
   ]);
  });
  const topNav=$$(".launch-navigation a[href^='#']");
@@ -75,9 +75,9 @@ if(page==="home"){
 }
 if(page==="login"){
  const signIn=$('a[href^="/signin-with-chatgpt"]');
- if(signIn){signIn.href=SOURCE+"/login";signIn.setAttribute("aria-label","Continue to original ACTA site for secure ChatGPT login")}
+ if(signIn){signIn.href=SOURCE+"/login";signIn.setAttribute("aria-label","Continue to the existing secure sign-in service")}
  const panel=$("h1")?.closest("section")||$("main");
- if(panel){const p=document.createElement("p");p.className="acta-static-notice";p.textContent="Secure sign-in is handled by the existing live ACTA service. This GitHub version does not have its own authentication backend.";panel.appendChild(p)}
+ if(panel){const p=document.createElement("p");p.className="acta-static-notice";p.textContent="Secure sign-in is handled by the original hosted service. This GitHub version does not have its own authentication backend.";panel.appendChild(p)}
 }
 
 if(page==="demo"){
@@ -86,7 +86,7 @@ if(page==="demo"){
  const sentTemplate=$(".simple-entry.sent",detail)?.cloneNode(true);
  const receivedTemplate=$(".simple-entry.received",detail)?.cloneNode(true)||sentTemplate?.cloneNode(true);
  const snapshot={
-  id:"ACTA-1004",title:"Kitchen repair follow-up",party:"Northfield Housing",status:"Action required",notes:"Keep the repair request, replies and supporting evidence together. This is a fictional example case.",
+  id:"LNY-1004",title:"Kitchen repair follow-up",party:"Northfield Housing",status:"Action required",notes:"Keep the repair request, replies and supporting evidence together. This is a fictional example case.",
   entries:[
    {direction:"Sent",type:"Letter",title:"Initial repair request",date:"2026-11-07",via:"Royal Mail Signed For",reference:"SAMPLE REFERENCE",delivery:"Delivered",notes:"Requested a repair appointment and included photographs of the affected area. Sample correspondence.",file:true},
    {direction:"Received",type:"Email",title:"Repair team response",date:"2026-11-18",via:"Email",reference:"",delivery:"",notes:"The repairs team has offered an appointment. Review the proposed date and confirm availability. Sample correspondence.",file:false}
@@ -94,9 +94,9 @@ if(page==="demo"){
  };
  const defaults=[
   snapshot,
-  {id:"ACTA-1003",title:"Incorrect final energy bill",party:"Evergreen Energy",status:"Waiting for reply",notes:"Keep the billing dispute and supporting evidence together.",entries:[{direction:"Sent",type:"Letter",title:"Final bill dispute",date:"2026-11-10",via:"Royal Mail Signed For",reference:"BILL-EXAMPLE",delivery:"Delivered",notes:"Requested a corrected closing account and an explanation of the final charges."}]},
-  {id:"ACTA-1002",title:"Contents insurance claim",party:"Cedar Insurance",status:"Open",notes:"Record claim documents and any responses from the insurer.",entries:[{direction:"Sent",type:"Email",title:"Claim notification",date:"2026-11-12",via:"Email",reference:"CLAIM-EXAMPLE",delivery:"",notes:"Opened an example claim for household contents."}]},
-  {id:"ACTA-1001",title:"Council tax address update",party:"Westborough Council",status:"Waiting for reply",notes:"Monitor the council tax address update and confirmation.",entries:[{direction:"Sent",type:"Letter",title:"Address change notice",date:"2026-11-13",via:"Royal Mail",reference:"",delivery:"",notes:"Asked the council to update the recorded correspondence address."}]}
+  {id:"LNY-1003",title:"Incorrect final energy bill",party:"Evergreen Energy",status:"Waiting for reply",notes:"Keep the billing dispute and supporting evidence together.",entries:[{direction:"Sent",type:"Letter",title:"Final bill dispute",date:"2026-11-10",via:"Royal Mail Signed For",reference:"BILL-EXAMPLE",delivery:"Delivered",notes:"Requested a corrected closing account and an explanation of the final charges."}]},
+  {id:"LNY-1002",title:"Contents insurance claim",party:"Cedar Insurance",status:"Open",notes:"Record claim documents and any responses from the insurer.",entries:[{direction:"Sent",type:"Email",title:"Claim notification",date:"2026-11-12",via:"Email",reference:"CLAIM-EXAMPLE",delivery:"",notes:"Opened an example claim for household contents."}]},
+  {id:"LNY-1001",title:"Council tax address update",party:"Westborough Council",status:"Waiting for reply",notes:"Monitor the council tax address update and confirmation.",entries:[{direction:"Sent",type:"Letter",title:"Address change notice",date:"2026-11-13",via:"Royal Mail",reference:"",delivery:"",notes:"Asked the council to update the recorded correspondence address."}]}
  ];
  let records;try{records=JSON.parse(sessionStorage.getItem("acta-example-processes")||"null")||defaults}catch{records=defaults}
  if(!Array.isArray(records)||!records.length)records=defaults;
@@ -140,7 +140,7 @@ if(page==="demo"){
   const note=$(".process-notes-label",detail);if(note)note.textContent=r.notes||"No notes yet.";
   const noteBody=$(".process-notes>div>p",detail);if(noteBody)noteBody.textContent=r.notes||"No notes yet.";
   const noteDate=$(".process-notes>div>p:nth-of-type(2)",detail);if(noteDate)noteDate.hidden=true;
-  const task=$(".process-notes .simple-task",detail);if(task)task.hidden=r.id!=="ACTA-1004";
+  const task=$(".process-notes .simple-task",detail);if(task)task.hidden=r.id!=="LNY-1004";
   const timeline=$(".simple-timeline",detail);
   if(timeline){timeline.innerHTML="";r.entries.forEach((entry,i)=>timeline.appendChild(entryNode(entry,i)))}
   const count=$(".timeline-heading span",detail);if(count)count.textContent=r.entries.length+" "+(r.entries.length===1?"item":"items")+" · oldest first";
@@ -161,7 +161,7 @@ if(page==="demo"){
   showModal(isNew?"Create an example process":"Edit process",body,[
    {text:"Cancel",onClick:closeModal},{text:isNew?"Create process":"Save changes",primary:true,onClick:()=>{
     const v=formDataFromModal();if(!v)return;
-    if(isNew){const id="ACTA-"+(Date.now()%100000);records.unshift({id,title:v.title.trim(),party:v.party.trim(),notes:v.notes.trim(),status:"Open",entries:[]});selected=id}
+    if(isNew){const id="LNY-"+(Date.now()%100000);records.unshift({id,title:v.title.trim(),party:v.party.trim(),notes:v.notes.trim(),status:"Open",entries:[]});selected=id}
     else{Object.assign(r,{title:v.title.trim(),party:v.party.trim(),notes:v.notes.trim()})}
     render();closeModal()
    }}
