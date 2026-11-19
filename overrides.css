@@ -37,3 +37,25 @@ html{scroll-behavior:smooth}
 .acta-editor-list>button{width:100%;border:1px solid #c5d2e4;text-align:left;background:#f8fbff;padding:12px;color:#234a78;cursor:pointer}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* 19 November ACTA refinements — blue illuminated background, no decorative A. */
+body[data-page="home"]{background:#02091c!important}
+body[data-page="home"] .acta-launch{background:transparent!important}
+body[data-page="home"] .launch-light-scene{background:#02091c!important}
+body[data-page="home"] .launch-light-fallback{
+  background:radial-gradient(ellipse 55% 45% at 10% 76%,rgba(19,91,248,.29) 0%,rgba(9,43,129,.13) 48%,transparent 100%),
+             radial-gradient(ellipse 47% 46% at 82% 44%,rgba(40,92,226,.22),transparent 89%)!important;
+}
+body[data-page="home"] .launch-light-fallback::before{
+  background:linear-gradient(90deg,rgba(22,87,240,.77) 0%,rgba(44,138,255,.87) 41%,rgba(45,90,230,.65) 78%,rgba(61,79,205,.34) 100%)!important;
+  box-shadow:0 0 75px 22px rgba(21,85,235,.24),0 0 155px 50px rgba(15,58,169,.12)!important;
+}
+body[data-page="home"] .launch-brand svg,
+body[data-page="demo"] .website-header .brand svg,
+body[data-page="login"] .website-header .brand svg{display:none!important}
+body[data-page="home"] .launch-brand{gap:0!important}
+body[data-page="home"] .launch-card:after{
+  background:linear-gradient(100deg,rgba(30,107,241,.21),rgba(45,81,206,.11),rgba(40,149,255,.12))!important;
+}
+body[data-page="home"] .launch-assurance-icons,
+body[data-page="home"] .launch-login{display:none!important}
