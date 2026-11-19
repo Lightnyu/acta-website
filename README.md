@@ -1,6 +1,6 @@
-# ACTA — Private Members’ Club
+# LIGHTNYU — Private Members’ Club
 
-This repository reconstructs the **existing public ACTA website** from the user-owned source at https://ikhnaie.anatoliim.chatgpt.site/ as a standalone static frontend. It replaces the earlier starter mock-up and retains the homepage’s layout, public messaging, product journey, example workspace, and login presentation.
+This repository reconstructs the **original public ACTA website** from the user-owned source at https://ikhnaie.anatoliim.chatgpt.site/ as a standalone static frontend. It replaces the earlier starter mock-up and retains the homepage’s layout, public messaging, product journey, example workspace, and login presentation.
 
 ## Included
 
@@ -10,7 +10,7 @@ This repository reconstructs the **existing public ACTA website** from the user-
 - `site.css` — site layout styles recovered from the existing public site (includes Tailwind CSS, MIT licence notice)
 - `overrides.css` — requested blue rebrand and removal of decorative header glyph
 - `app.js` — countdown, navigation, form handoff, scroll reveal, temporary example-workspace interactions
-- `favicon.svg` — existing ACTA favicon
+- `favicon.svg` — LIGHTNYU favicon
 
 ## Start
 
