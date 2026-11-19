@@ -117,3 +117,14 @@ body[data-page="home"] .ref-header-center .ref-brand{flex-shrink:0;min-height:56
  body[data-page="home"] .ref-hero{padding-top:172px}
 }
 @media(max-width:380px){body[data-page="home"] .ref-header-center{width:calc(100% - 32px)}}
+
+/* LIGHTNYU wordmark: maintain balanced spacing for the longer name. */
+body[data-page="home"] .ref-brand{letter-spacing:.13em}
+@media (min-width:951px) and (max-width:1120px){
+ body[data-page="home"] .ref-header{min-height:140px;align-items:flex-start}
+ body[data-page="home"] .ref-header-center{top:16px;flex-direction:column;gap:8px;width:calc(100% - 40px)}
+ body[data-page="home"] .ref-header-center .ref-brand{min-height:38px}
+ body[data-page="home"] .ref-header .ref-header-center .ref-nav{width:100%;max-width:540px}
+ body[data-page="home"] .ref-header .ref-header-center .ref-nav nav{width:100%;justify-content:center}
+ body[data-page="home"] .ref-hero{padding-top:172px}
+}
