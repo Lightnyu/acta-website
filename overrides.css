@@ -1,0 +1,39 @@
+/* ACTA visual refinements: preserve source layout, move warm accents to blue. */
+:root{--acta-blue:#397ff5;--acta-blue-soft:#9dc9ff}
+html{scroll-behavior:smooth}
+.launch-light-fallback{background:radial-gradient(at 8% 67%,#0a71ef1a,transparent 35%),radial-gradient(at 80% 40%,#3b39ef2d,transparent 45%)}
+.launch-light-fallback:before{background:linear-gradient(90deg,#107aff90,#2d55f78a 52%,#544be47a)}
+.launch-card:after{background:linear-gradient(90deg,#2374ff27,#5b57ff26)}
+.kinetic-grid-content .acta-launch .proximity-action{background:#206fea!important;border-color:#5fa3ff!important;box-shadow:0 0 20px #237ffb26!important}
+.kinetic-grid-content .acta-launch .proximity-action:before{background:#1152b9!important}
+.kinetic-grid-content .acta-launch .proximity-action:hover{background:#185fd0!important;border-color:#9ac6ff!important;box-shadow:0 7px 30px #2c80fb4a!important}
+.acta-product-intro h2 em,.acta-story-closing h2 em,.acta-evidence-section h2 em{color:#b5d8ff!important}
+.acta-section-eyebrow,.acta-story-strip a,.launch-privacy{color:#b9d4ff}
+.acta-story-strip a:hover,.launch-navigation nav a.is-active{border-color:#5b94f280}
+.launch-login:hover,.launch-scroll-cue:hover{color:#c7e2ff!important}
+.launch-brand,.website-header .brand{letter-spacing:.14em;font-weight:600;gap:0}
+.acta-launch .launch-card,.acta-launch .launch-input-row input,.acta-launch .proximity-action{border-radius:0!important}
+.acta-product-intro,.acta-evidence-section,.acta-industries,.acta-story-closing{color:#f8faff}
+.website-header .brand svg{display:none}
+.launch-form .launch-message{font-size:12px;margin:10px 0 0;color:#cfe4ff;line-height:1.6}
+.acta-demo-banner,.acta-modal{font-family:Arial,sans-serif}
+.acta-modal[hidden]{display:none!important}
+.acta-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;background:#030715c9;backdrop-filter:blur(6px)}
+.acta-modal-card{color:#132341;background:#fff;max-width:520px;width:100%;max-height:92vh;overflow-y:auto;padding:28px;box-shadow:0 12px 65px #0006;border:1px solid #b9c7df;border-radius:0}
+.acta-modal-card h2{font-size:22px;line-height:1.25;margin:0 0 12px}
+.acta-modal-card p{font-size:13px;color:#4b5f79;line-height:1.65}
+.acta-modal-card label{display:block;font-size:12px;font-weight:600;margin:12px 0 5px}
+.acta-modal-card input,.acta-modal-card select,.acta-modal-card textarea{display:block;width:100%;border:1px solid #b4c2d4;border-radius:0;padding:11px;color:#102039;background:#fff;font:14px/1.5 Arial,sans-serif}
+.acta-modal-card textarea{min-height:92px;resize:vertical}
+.acta-modal-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;margin-top:22px}
+.acta-modal-card button,.acta-modal-card .acta-modal-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:0;border:1px solid #879bb6;font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:#172a47}
+.acta-modal-card button.primary,.acta-modal-card .acta-modal-link{background:#245fcd;color:#fff;border-color:#245fcd;text-decoration:none}
+.acta-modal-card button:hover{filter:brightness(.94)}
+.acta-modal-card button:focus-visible,.acta-modal-card input:focus-visible,.acta-modal-card select:focus-visible,.acta-modal-card textarea:focus-visible{outline:2px solid #387eff;outline-offset:2px}
+.acta-preview-alert{display:inline-block;background:#eaf1ff;border:1px solid #aac8fa;color:#254d94;padding:8px 12px;margin:8px 0 14px;font-size:12px}
+.acta-static-notice{font-size:12px;line-height:1.5;color:#8fa9d9}
+.simple-app .process-item:focus-visible{outline:2px solid #226be2;outline-offset:2px}
+.acta-editor-list{display:grid;gap:8px;margin:14px 0}
+.acta-editor-list>button{width:100%;border:1px solid #c5d2e4;text-align:left;background:#f8fbff;padding:12px;color:#234a78;cursor:pointer}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
